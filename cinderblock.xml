@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<block name="MSTCinder" id="org.thorsonmscott.mstcinder" author="Max Thorson" summary="Cinder block with my random utilities." git="https://github.com/thorsonmscott/MSTCinder.git">
+	<headerPattern>src/*.h</headerPattern>
+	<sourcePattern>src/*.cpp</sourcePattern>
+</block>
+</cinder>
