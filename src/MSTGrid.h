@@ -19,15 +19,28 @@ namespace grid {
     class Grid {
     public:
                 
-        static GridRef create();
+        static GridRef createFromBoundsAndCellSize(Rectf bounds, vec2 cellSize);
+        static GridRef createFromBoundsAndCellCount(Rectf bounds, ivec2 cellCount);
+        
+        Rectf getBounds();
+        void setPosition(vec2 position);
+        
+        bool pointInBounds(vec2 point);
+        ivec2 cellForPoint(vec2 point);
+        Rectf boundsForCell(ivec2 cell);
+        
+        void drawBounds(bool fill = false);
+        void drawWires();
         
     protected:
         
-        Grid();
+        Grid(Rectf bounds, vec2 cellSize);
         
     private:
         
-        
+        vec2 mCellSize;
+        ivec2 mCellCount;
+        Rectf mBounds;
         
     };
     
