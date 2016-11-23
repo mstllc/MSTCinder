@@ -57,9 +57,9 @@ void Grid::drawBounds(bool fill) {
 
 void Grid::drawWires() {
     for (int c = 1; c < mCellCount.x; ++c) {
-        gl::drawLine(vec2(c * mCellSize.x, mBounds.y1), vec2(c * mCellSize.x, mBounds.y2));
+        gl::drawLine(vec2(c * mCellSize.x + mBounds.x1, mBounds.y1), vec2(c * mCellSize.x + mBounds.x1, mBounds.y2));
     }
     for (int r = 1; r < mCellCount.y; ++r) {
-        gl::drawLine(vec2(mBounds.x1, r * mCellSize.y), vec2(mBounds.x2, r * mCellSize.y));
+        gl::drawLine(vec2(mBounds.x1, r * mCellSize.y + mBounds.y1), vec2(mBounds.x2, r * mCellSize.y + mBounds.y1));
     }
 }
