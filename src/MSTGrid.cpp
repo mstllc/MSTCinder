@@ -56,13 +56,10 @@ void Grid::drawBounds(bool fill) {
 }
 
 void Grid::drawWires() {
-    gl::ScopedModelMatrix modelMatrixScope;
-    gl::translate(mBounds.getUpperLeft());
-    
     for (int c = 1; c < mCellCount.x; ++c) {
-        gl::drawLine(vec2(c * mCellSize.x, 0.0f), vec2(c * mCellSize.x, mBounds.getHeight()));
+        gl::drawLine(vec2(c * mCellSize.x, mBounds.y1), vec2(c * mCellSize.x, mBounds.y2));
     }
     for (int r = 1; r < mCellCount.y; ++r) {
-        gl::drawLine(vec2(0.0f, r * mCellSize.y), vec2(mBounds.getWidth(), r * mCellSize.y));
+        gl::drawLine(vec2(mBounds.x1, r * mCellSize.y), vec2(mBounds.x2, r * mCellSize.y));
     }
 }
