@@ -25,6 +25,14 @@ Grid::Grid(Rectf bounds, vec2 cellSize) : mBounds(bounds), mCellSize(cellSize) {
     mBounds.y2 = mBounds.y1 + (mCellCount.y * mCellSize.y);
 }
 
+int Grid::getCols() {
+    return mCellCount.x;
+}
+
+int Grid::getRows() {
+    return mCellCount.y;
+}
+
 Rectf Grid::getBounds() {
     return mBounds;
 }
@@ -35,6 +43,10 @@ void Grid::setPosition(vec2 position) {
 
 bool Grid::pointInBounds(vec2 point) {
     return mBounds.contains(point);
+}
+
+bool Grid::cellInBounds(ivec2 cell) {
+    return (cell.x > -1 && cell.x < mCellCount.x && cell.y > -1 && cell.y < mCellCount.y);
 }
 
 ivec2 Grid::cellForPoint(vec2 point) {

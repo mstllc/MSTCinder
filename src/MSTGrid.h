@@ -22,10 +22,13 @@ namespace grid {
         static GridRef createFromBoundsAndCellSize(Rectf bounds, vec2 cellSize);
         static GridRef createFromBoundsAndCellCount(Rectf bounds, ivec2 cellCount);
         
+        int getCols();
+        int getRows();
         Rectf getBounds();
         void setPosition(vec2 position);
         
         bool pointInBounds(vec2 point);
+        bool cellInBounds(ivec2 cell);
         ivec2 cellForPoint(vec2 point);
         Rectf boundsForCell(ivec2 cell);
         
